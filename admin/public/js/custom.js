@@ -7,9 +7,13 @@ $('.dataTables_length').addClass('bs-select');
 function getServiceData(){
     axios.get('/getServicesData')
     .then(function(response){
-        var jsonData = response.data;
-        $.each(jsonData,function(i,item){
-            $('<tr>').html(
+        if(response.status == 200){
+            $('#mainDiv').removeClass('d-none');
+            $('#loaderDiv').addClass('d-none');
+
+            var jsonData = response.data;
+            $.each(jsonData,function(i,item){
+                $('<tr>').html(
                 "<td> <img class ='table_img' src=" + jsonData[i].service_img + "></td>" +
                 "<td>" + jsonData[i].service_name + "</td>" +
                 "<td>" + jsonData[i].service_des + "</td>" +
@@ -17,9 +21,15 @@ function getServiceData(){
                 "<td> <a href='' ><i class='fas fa-trash-alt'></i></a></td>"               
                 
                 ).appendTo('#service_table')
-        });
+            });
+        }else{
+            $('#mainDiv').addClass('d-none');
+            $('#loaderDiv').removeClass('d-none');
+        }
     })
     .catch(function(error){
-
+        $('#mainDiv').addClass('d-none');
+        $('#loaderDiv').removeClass('d-none');
     });
 }
+
