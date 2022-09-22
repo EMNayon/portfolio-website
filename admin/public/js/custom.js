@@ -18,10 +18,18 @@ function getServiceData(){
                 "<td>" + jsonData[i].service_name + "</td>" +
                 "<td>" + jsonData[i].service_des + "</td>" +
                 "<td> <a data-mdb-toggle='modal' data-mdb-target='#exampleModal' ><i class='fas fa-edit'></i></a> </td>" +
-                "<td> <a data-mdb-toggle='modal' data-id = "+jsonData[i].id +" data-mdb-target='#deleteModal'> <i class='fas fa-trash-alt'></i> </a></td>" 
+                // "<td> <a data-mdb-toggle='modal' data-id = "+jsonData[i].id +" data-mdb-target='#deleteModal'> <i class='fas fa-trash-alt'></i> </a></td>" 
+                "<td> <a class='serviceDeleteBtn' data-id = "+jsonData[i].id +" > <i class='fas fa-trash-alt'></i> </a></td>" 
                 
                 ).appendTo('#service_table')
             });
+            
+            $('.serviceDeleteBtn').click(function(){
+                var id = $(this).data('id');
+                $('#serviceDeleteId').html(id);
+                $('#deleteModal').modal('show');
+            })
+
         }else{
             $('#mainDiv').addClass('d-none');
             $('#loaderDiv').removeClass('d-none');

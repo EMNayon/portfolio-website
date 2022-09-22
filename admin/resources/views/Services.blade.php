@@ -49,12 +49,13 @@
     <div class="modal-content">
       <div class="modal-body text-center p-3">
         <h4 class="mt-4">Do You Want Delete?</h4>
+        <h5 id="serviceDeleteId" class="mt-4"></h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
           No
         </button>
-        <button type="button" class="btn btn-danger">Yes</button>
+        <button id="serviceDeleteConfirmBtn" type="button" class="btn btn-danger">Yes</button>
       </div>
     </div>
   </div>
