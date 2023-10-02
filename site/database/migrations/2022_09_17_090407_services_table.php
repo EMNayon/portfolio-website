@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services',function(Blueprint $table){
+        Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('service_name');
-	        $table->string('service_des');
+            $table->string('service_des');
             $table->string('service_img');
-});
+        });
     }
 
     /**
