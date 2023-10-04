@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CourseModel;
 use App\Models\ServicesModel;
 use Illuminate\Http\Request;
 use App\Models\VisitorModel;
@@ -15,8 +16,10 @@ class HomeController extends Controller
 
 
         $servicesData = json_decode(ServicesModel::all(),true);
+        $coursesData = json_decode(CourseModel::orderBy('id','desc')->limit(6)->get(),true);
         return view('Home',[
-            'servicesData' => $servicesData
+            'servicesData' => $servicesData,
+            'coursesData' => $coursesData
         ]);
     }
 }

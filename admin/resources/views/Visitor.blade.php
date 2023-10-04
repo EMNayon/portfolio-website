@@ -30,3 +30,8 @@
 </div>
 
 @endsection
+{{-- @section('script')
+<script type="">
+
+</script>
+@endsection --}}
