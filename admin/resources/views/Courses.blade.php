@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12 p-5">
             <button id="addNewCourse" class="btn btn-sm btn-danger my-3" >Add New</button>
-            <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="course_data_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th class="th-sm">Name</th>

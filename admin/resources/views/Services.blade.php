@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 p-5">
               <button id="something" class="btn btn-sm btn-danger my-3" >Add New</button>
-                <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="service_data_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th class="th-sm">Image</th>
@@ -141,7 +141,7 @@ function getServiceData() {
             if (response.status == 200) {
                 $("#mainDiv").removeClass("d-none");
                 $("#loaderDiv").addClass("d-none");
-
+                $('#service_data_table').DataTable().destroy();
                 $("#service_table").empty();
 
                 var jsonData = response.data;
@@ -213,6 +213,10 @@ function getServiceData() {
                     var img = $("#serviceImageAddId").val();
                     serviceAdd(name, des, img);
                 });
+
+                $('#service_data_table').DataTable();
+                $(".dataTables_length").addClass("bs-select");
+
             } else {
                 $("#loaderDiv").addClass("d-none");
                 $("#wrongDiv").removeClass("d-none");

@@ -16,6 +16,7 @@ function getCoursesData() {
                 $("#mainDivCourse").removeClass("d-none");
                 $("#loaderDivCourses").addClass("d-none");
 
+                $('#course_data_table').DataTable().destroy();
                 $("#courses_table").empty();
 
                 var jsonData = response.data;
@@ -101,6 +102,10 @@ function getCoursesData() {
                     var img = $("#CourseImgId").val();
                     courseAdd(name, des,fee,enroll,classes,link, img);
                 });
+
+                $('#course_data_table').DataTable();
+                $(".dataTables_length").addClass("bs-select");
+                
             } else {
                 $("#loaderDivCourses").addClass("d-none");
                 $("#wrongDivCourses").removeClass("d-none");
