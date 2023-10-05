@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectsController;
@@ -34,3 +35,8 @@ Route::post('/projectDelete',[ProjectsController::class,'ProjectDelete']);
 Route::post('/projectDetails',[ProjectsController::class,'getProjectDetails']);
 Route::post('/projectUpdate',[ProjectsController::class,'ProjectUpdate']);
 Route::post('/projectAdd',[ProjectsController::class,'ProjectAdd']);
+
+// contact
+Route::get('/contact', [ContactController::class, 'ContactIndex']);
+Route::get('/getContactData',[ContactController::class,'getContactData']);
+Route::post('/contactDelete',[ContactController::class,'contactDelete']);

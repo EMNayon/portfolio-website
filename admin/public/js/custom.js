@@ -530,3 +530,103 @@ function projectDelete(deleteId) {
 }
 
 
+
+
+// contact start js code 
+function getContactData() {
+    axios
+        .get("/getContactData")
+        .then(function (response) {
+            if (response.status == 200) {
+                $("#mainDivContact").removeClass("d-none");
+                $("#loaderDivContact").addClass("d-none");
+
+                $('#contact_data_table').DataTable().destroy();
+                $("#contact_table").empty();
+
+                var jsonData = response.data;
+                $.each(jsonData, function (i, item) {
+                    $("<tr>")
+                        .html(
+                            "<td> <img class ='table-img' src=" +
+                            jsonData[i].contact_name +
+                            "></td>" +
+                                "<td>" +
+                                jsonData[i].mobile_no +
+                                "</td>" +
+                                "<td>" +
+                                jsonData[i].contact_email +
+                                "</td>" +
+                                "<td>" +
+                                jsonData[i].contact_message +
+                                "</td>" +
+                               
+                                
+                               
+                                // "<td> <a data-mdb-toggle='modal' data-id = "+jsonData[i].id +" data-mdb-target='#deleteModal'> <i class='fas fa-trash-alt'></i> </a></td>"
+                                "<td> <a class='contactDeleteBtn' data-id = " +
+                                jsonData[i].id +
+                                " > <i class='fas fa-trash-alt'></i> </a></td>"
+                        )
+                        .appendTo("#contact_table");
+                });
+
+                // project table delete icon click
+                $(".contactDeleteBtn").click(function () {
+                    var id = $(this).data("id");
+                    $("#contactDeleteId").html(id);
+                    // $('#serviceDeleteConfirmBtn').attr('data-id',id);
+                    $("#deleteContactModal").modal("show");
+                });
+                // project delete modal yes button
+                $("#contactDeleteConfirmBtn").click(function () {
+                    // var id = $(this).data('id');
+                    var id = $("#contactDeleteId").html();
+                    console.log(id);
+                    contactDelete(id);
+                });
+
+                $('#contact_data_table').DataTable();
+                $(".dataTables_length").addClass("bs-select");
+                
+            } else {
+                $("#loaderDivContact").addClass("d-none");
+                $("#wrongDivContact").removeClass("d-none");
+            }
+        })
+        .catch(function (error) {
+            $("#loaderDivContact").addClass("d-none");
+            $("#wrongDivContact").removeClass("d-none");
+        });
+}
+
+// contact delete
+function contactDelete(deleteId) {
+    $("#contactDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation 
+    axios.post("/contactDelete", { id: deleteId })
+
+        .then(function (response) {
+            $("#contactDeleteConfirmBtn").html("Yes")
+            if(response.status == 200){
+                if (response.data == 1) {
+                    $("#deleteContactModal").modal("hide");
+                    // toastr.success('Delete Success');
+                    getContactData();
+                } else {
+                    $("#deleteContactModal").modal("hide");
+                    // toastr.error('Delete Fail');
+                    getContactData();
+                }
+            }
+            else {
+                $("#deleteContactModal").modal("hide");
+                alert("Something Went Wrong!")
+            }
+            
+        })
+        .catch(function (error) {
+            $("#deleteContactModal").modal("hide");
+            alert("Something Went Wrong!")
+        });
+}
+
