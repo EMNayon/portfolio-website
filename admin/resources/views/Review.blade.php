@@ -73,16 +73,16 @@
                 <div id="reviewEditForm" class="d-none">
                     <div class="form-outline mb-4">
                         <input type="name" id="reviewNameId" class="form-control" />
-                        <label class="form-label" for="form4Example2">Project Name</label>
+                        <label class="form-label" for="form4Example2">Reviewer Name</label>
                     </div>
                     <div class="form-outline mb-4">
                         <input class="form-control" id="reviewDesId" rows="4" />
-                        <label class="form-label" for="form4Example3">Project Description</label>
+                        <label class="form-label" for="form4Example3"> Description</label>
                     </div>
-                    <div class="form-outline mb-4">
+                    {{-- <div class="form-outline mb-4">
                         <input class="form-control" id="reviewLinkId" rows="4" />
                         <label class="form-label" for="form4Example3">Project Link</label>
-                    </div>
+                    </div> --}}
                     <div class="form-outline mb-4">
                         <input type="text" id="reviewImageId" class="form-control" />
                         <label class="form-label" for="form4Example1">Image Link</label>
@@ -106,18 +106,14 @@
         <div class="modal-content">
             <div class="modal-body text-center p-3">
                 <div id="serviceAddForm" class="">
-                    <h6 class="mb-2">Add New Project</h6>
+                    <h6 class="mb-2">Add New Review</h6>
                     <div class="form-outline mb-4">
                         <input type="name" id="reviewNameAddId" class="form-control" />
-                        <label class="form-label" for="form4Example2">Project Name</label>
+                        <label class="form-label" for="form4Example2">Reviewer Name</label>
                     </div>
                     <div class="form-outline mb-4">
                         <input class="form-control" id="reviewDesAddId" rows="4" />
-                        <label class="form-label" for="form4Example3">Project Description</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input class="form-control" id="reviewLinkAddId" rows="4" />
-                        <label class="form-label" for="form4Example3">Project Link</label>
+                        <label class="form-label" for="form4Example3"> Description</label>
                     </div>
                     <div class="form-outline mb-4">
                         <input type="text" id="reviewImageAddId" class="form-control" />

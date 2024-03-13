@@ -100,7 +100,7 @@ function getCoursesData() {
 
                 $('#course_data_table').DataTable();
                 $(".dataTables_length").addClass("bs-select");
-                
+
             } else {
                 $("#loaderDivCourses").addClass("d-none");
                 $("#wrongDivCourses").removeClass("d-none");
@@ -128,7 +128,7 @@ function courseAdd(cousreName, cousreDes,cousreFee,cousreEnroll,cousreClass,cous
         alert("Service Image is Empty!");
     }else if (cousreImg.length == 0) {
         alert("Service Image is Empty!");
-    }  
+    }
     else {
         $("#CourseAddConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
         axios
@@ -157,7 +157,7 @@ function courseAdd(cousreName, cousreDes,cousreFee,cousreEnroll,cousreClass,cous
                     $("#addCourseModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
                 $("#addCourseModal").modal("hide");
@@ -242,7 +242,7 @@ function courseUpdated(courseId, cousreName, cousreDes,cousreFee,cousreEnroll,co
                     $("#editCourseModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
                 $("#editCourseModal").modal("hide");
@@ -253,7 +253,7 @@ function courseUpdated(courseId, cousreName, cousreDes,cousreFee,cousreEnroll,co
 
 // course delete
 function courseDelete(deleteId) {
-    $("#courseDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation 
+    $("#courseDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation
     axios.post("/courseDelete", { id: deleteId })
 
         .then(function (response) {
@@ -273,7 +273,7 @@ function courseDelete(deleteId) {
                 $("#deleteCourseModal").modal("hide");
                 alert("Something Went Wrong!")
             }
-            
+
         })
         .catch(function (error) {
             $("#deleteCourseModal").modal("hide");
@@ -282,7 +282,7 @@ function courseDelete(deleteId) {
 }
 
 
-// projects start js code 
+// projects start js code
 function getProjectsData() {
     axios
         .get("/getProjectsData")
@@ -307,8 +307,8 @@ function getProjectsData() {
                                 "<td>" +
                                 jsonData[i].project_des +
                                 "</td>" +
-                               
-                                
+
+
                                 "<td> <a class = 'projectEditBtn' data-id = " +
                                 jsonData[i].id +
                                 "  ><i class='fas fa-edit'></i></a> </td>" +
@@ -370,7 +370,7 @@ function getProjectsData() {
 
                 $('#project_data_table').DataTable();
                 $(".dataTables_length").addClass("bs-select");
-                
+
             } else {
                 $("#loaderDivCourses").addClass("d-none");
                 $("#wrongDivCourses").removeClass("d-none");
@@ -416,7 +416,7 @@ function projectAdd(projectName, projectDes,projectLink, projectImg) {
                     $("#addProjectModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
                 $("#addProjectModal").modal("hide");
@@ -487,7 +487,7 @@ function projectUpdated(courseId, projectName, projectDes,projectLink, projectIm
                     $("#editProjectModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
                 $("#editProjectModal").modal("hide");
@@ -497,7 +497,7 @@ function projectUpdated(courseId, projectName, projectDes,projectLink, projectIm
 }
 // project delete
 function projectDelete(deleteId) {
-    $("#projectDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation 
+    $("#projectDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation
     axios.post("/projectDelete", { id: deleteId })
 
         .then(function (response) {
@@ -517,7 +517,7 @@ function projectDelete(deleteId) {
                 $("#deleteProectModal").modal("hide");
                 alert("Something Went Wrong!")
             }
-            
+
         })
         .catch(function (error) {
             $("#deleteProectModal").modal("hide");
@@ -526,7 +526,7 @@ function projectDelete(deleteId) {
 }
 
 
-// contact start js code 
+// contact start js code
 function getContactData() {
     axios
         .get("/getContactData")
@@ -554,9 +554,9 @@ function getContactData() {
                                 "<td>" +
                                 jsonData[i].contact_message +
                                 "</td>" +
-                               
-                                
-                               
+
+
+
                                 // "<td> <a data-mdb-toggle='modal' data-id = "+jsonData[i].id +" data-mdb-target='#deleteModal'> <i class='fas fa-trash-alt'></i> </a></td>"
                                 "<td> <a class='contactDeleteBtn' data-id = " +
                                 jsonData[i].id +
@@ -582,7 +582,7 @@ function getContactData() {
 
                 $('#contact_data_table').DataTable();
                 $(".dataTables_length").addClass("bs-select");
-                
+
             } else {
                 $("#loaderDivContact").addClass("d-none");
                 $("#wrongDivContact").removeClass("d-none");
@@ -595,7 +595,7 @@ function getContactData() {
 }
 // contact delete
 function contactDelete(deleteId) {
-    $("#contactDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation 
+    $("#contactDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation
     axios.post("/contactDelete", { id: deleteId })
 
         .then(function (response) {
@@ -615,7 +615,7 @@ function contactDelete(deleteId) {
                 $("#deleteContactModal").modal("hide");
                 alert("Something Went Wrong!")
             }
-            
+
         })
         .catch(function (error) {
             $("#deleteContactModal").modal("hide");
@@ -624,7 +624,7 @@ function contactDelete(deleteId) {
 }
 
 
-// review start js code 
+// review start js code
 function getReviewData() {
     axios
         .get("/getReviewData")
@@ -651,8 +651,8 @@ function getReviewData() {
                                 "<td>" +
                                 jsonData[i].reviewer_des +
                                 "</td>" +
-                               
-                                
+
+
                                 "<td> <a class = 'reviewEditBtn' data-id = " +
                                 jsonData[i].id +
                                 "  ><i class='fas fa-edit'></i></a> </td>" +
@@ -676,45 +676,45 @@ function getReviewData() {
                     // var id = $(this).data('id');
                     var id = $("#reviewDeleteId").html();
                     console.log(id);
-                    projectDelete(id);
+                    reviewDelete(id);
                 });
 
                 // review table edit icon click
                 $(".reviewEditBtn").click(function () {
                     var id = $(this).data("id");
                     $("#reviewEditId").html(id);
-                    projectUpdateDetails(id);
+                    reviewUpdateDetails(id);
                     $("#editReviewModal").modal("show");
                 });
                 // review edit modal save button
                 $("#reviewEditConfirmBtn").click(function () {
                     // var id = $(this).data('id');
-                    var id = $("#projectEditId").html();
-                    var name = $("#projectNameId").val();
-                    var des = $("#projectDesId").val();
-                    var link = $("#projectLinkId").val();
-                    var img = $("#projectImageId").val();
-                    projectUpdated(id, name, des,link, img);
+                    var id = $("#reviewEditId").html();
+                    var name = $("#reviewNameId").val();
+                    var des = $("#reviewDesId").val();
+                    // var link = $("#projectLinkId").val();
+                    var img = $("#reviewImageId").val();
+                    reviewUpdated(id, name,des, img);
                 });
 
                 // project add new btn click
-                $('#NewAddProject').click(function(){
-                    $('#addProjectModal').modal('show');
+                $('#NewAddReview').click(function(){
+                    $('#addReviewModal').modal('show');
                 });
 
                  // project add modal add new button
-                 $("#projectAddConfirmBtn").click(function () {
+                 $("#reviewAddConfirmBtn").click(function () {
                     // var id = $(this).data('id');
-                    var name = $("#projectNameAddId").val();
-                    var des = $("#projectDesAddId").val();
-                    var link = $("#projectLinkAddId").val();
-                    var img = $("#projectImageAddId").val();
-                    projectAdd(name, des,link, img);
+                    var name = $("#reviewNameAddId").val();
+                    var des = $("#reviewDesAddId").val();
+                    // var link = $("#reviewLinkAddId").val();
+                    var img = $("#reviewImageAddId").val();
+                    reviewAdd(name, des, img);
                 });
 
-                $('#project_data_table').DataTable();
+                $('#review_data_table').DataTable();
                 $(".dataTables_length").addClass("bs-select");
-                
+
             } else {
                 $("#loaderDivReview").addClass("d-none");
                 $("#wrongDivReview").removeClass("d-none");
@@ -725,146 +725,144 @@ function getReviewData() {
             $("#wrongDivReview").removeClass("d-none");
         });
 }
-// project add method
-function reviewAdd(projectName, projectDes,projectLink, projectImg) {
-    if (projectName.length == 0) {
-        alert("Project Name is Empty!");
-    }else if (projectDes.length == 0) {
-        alert("Project Des is Empty!");
-    }else if (projectLink.length == 0) {
-        alert("Project Link is Empty!");
-    }else if (projectImg.length == 0) {
-        alert("Project Image is Empty!");
+// review add method
+function reviewAdd(reviewName, reviewDes, reviewImg) {
+    if (reviewName.length == 0) {
+        alert("Reviewer Name is Empty!");
+    }else if (reviewDes.length == 0) {
+        alert("Review Des is Empty!");
+    }else if (reviewImg.length == 0) {
+        alert("Review Image is Empty!");
     }else {
-        $("#projectAddConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
+        $("#reviewAddConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
         axios
-            .post("/projectAdd", {
-                project_name: projectName,
-                project_des: projectDes,
-                project_link: projectLink,
-                project_img: projectImg,
+            .post("/reviewAdd", {
+                reviewer_name: reviewName,
+                reviewer_des: reviewDes,
+                // project_link: projectLink,
+                reviewer_img: reviewImg,
             })
             .then(function (response) {
-                $("#projectAddConfirmBtn").html("Add New")
+                $("#reviewAddConfirmBtn").html("Add New")
                 if(response.status == 200){
                     if (response.data == 1) {
-                        $("#addProjectModal").modal("hide");
+                        $("#addReviewModal").modal("hide");
                         // toastr.success('Delete Success');
-                        getProjectsData();
+                        getReviewData();
                     } else {
-                        $("#addProjectModal").modal("hide");
+                        $("#addReviewModal").modal("hide");
                         // toastr.error('Delete Fail');
-                        getProjectsData();
+                        getReviewData();
                     }
                 }else {
-                    $("#addProjectModal").modal("hide");
+                    $("#addReviewModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
-                $("#addProjectModal").modal("hide");
+                $("#addReviewModal").modal("hide");
                 alert("Something Went Wrong!")
             });
     }
 }
-//each  project details
+
+
+//each  review details
 function reviewUpdateDetails(detailsId) {
     axios
-        .post("/projectDetails", { id: detailsId })
+        .post("/reviewDetails", { id: detailsId })
         .then(function (response) {
             if (response.status == 200) {
                 // console.log(response);
-                $("#projectEditForm").removeClass("d-none");
-                $("#projectEditLoder").addClass("d-none");
-                $('#projectEditWrong').addClass('d-none');
+                $("#reviewEditForm").removeClass("d-none");
+                $("#reviewEditLoder").addClass("d-none");
+                $('#reviewEditWrong').addClass('d-none');
                 var jsonData = response.data;
                 // console.log(jsonData[0].course_des);
-                $("#projectNameId").val(jsonData[0].project_name);
-                $("#projectDesId").val(jsonData[0].project_des);
-                $("#projectLinkId").val(jsonData[0].project_link);
-                $("#projectImageId").val(jsonData[0].project_img);
+                $("#reviewNameId").val(jsonData[0].reviewer_name);
+                $("#reviewDesId").val(jsonData[0].reviewer_des);
+                // $("#reviewLinkId").val(jsonData[0].project_link);
+                $("#reviewImageId").val(jsonData[0].reviewer_img);
             } else {
-                $("#projectEditLoder").addClass("d-none");
-                $("#projectEditWrong").removeClass("d-none");
+                $("#reviewEditLoder").addClass("d-none");
+                $("#reviewEditWrong").removeClass("d-none");
             }
         })
         .catch(function (error) {
-            $("#projectEditLoder").addClass("d-none");
-            $("#projectEditWrong").removeClass("d-none");
+            $("#reviewEditLoder").addClass("d-none");
+            $("#reviewEditWrong").removeClass("d-none");
         });
 }
-//each  porject update
-function reviewUpdated(courseId, projectName, projectDes,projectLink, projectImg) {
-    if (projectName.length == 0) {
-        alert("Course Name is Empty!");
-    } else if (projectDes.length == 0) {
-        alert("Course Des is Empty!");
-    } else if (projectLink.length == 0) {
-        alert("Course link is Empty!");
-    }
-     else if (projectImg.length == 0) {
-        alert("Course Image is Empty!");
+//each  view update
+function reviewUpdated(Id, reviewName, reviewDes, reviewImg) {
+    console.log(reviewImg);
+    if (reviewName.length == 0) {
+        alert("Reviewer Name is Empty!");
+    } else if (reviewDes.length == 0) {
+        alert("Reviewer Des is Empty!");
+    }else if (reviewImg.length == 0) {
+        alert("Reviewer Image is Empty!");
     } else {
-        $("#projectEditConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
+        $("#reviewEditConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
         axios
-            .post("/projectUpdate", {
-                id: courseId,
-                project_name:projectName,
-                project_des: projectDes,
-                project_link: projectLink,
-                project_img: projectImg,
+            .post("/reviewUpdate", {
+                id: Id,
+                reviewer_name:reviewName,
+                reviewer_des: reviewDes,
+                // project_link: projectLink,
+                reviewer_img: reviewImg,
             })
             .then(function (response) {
-                $("#projectEditConfirmBtn").html("Save")
+                $("#reviewEditConfirmBtn").html("Save")
                 if(response.status){
                     if (response.data == 1) {
-                        $("#editProjectModal").modal("hide");
+                        $("#editReviewModal").modal("hide");
                         // toastr.success('Delete Success');
-                        getProjectsData();
+                        getReviewData();
                     } else {
-                        $("#editProjectModal").modal("hide");
+                        $("#editReviewModal").modal("hide");
                         // toastr.error('Delete Fail');
-                        getProjectsData();
+                        getReviewData();
                     }
                 }else {
-                    $("#editProjectModal").modal("hide");
+                    $("#editReviewModal").modal("hide");
                     alert("Something Went Wrong!")
                 }
-               
+
             })
             .catch(function (error) {
-                $("#editProjectModal").modal("hide");
+                $("#editReviewModal").modal("hide");
                 alert("Something Went Wrong!")
             });
     }
 }
-// project delete
+// view delete
 function reviewDelete(deleteId) {
-    $("#projectDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation 
+    $("#reviewDeleteConfirmBtn").html("<div class='spinner-border spinner-border-sm' role='status'></div>") // animation
     axios.post("/reviewDelete", { id: deleteId })
 
         .then(function (response) {
-            $("#projectDeleteConfirmBtn").html("Yes")
+            $("#reviewDeleteConfirmBtn").html("Yes")
             if(response.status == 200){
                 if (response.data == 1) {
-                    $("#deleteProectModal").modal("hide");
+                    $("#deleteReviewModal").modal("hide");
                     // toastr.success('Delete Success');
-                    getProjectsData();
+                    getReviewData();
                 } else {
-                    $("#deleteProectModal").modal("hide");
+                    $("#deleteReviewModal").modal("hide");
                     // toastr.error('Delete Fail');
-                    getProjectsData();
+                    getReviewData();
                 }
             }
             else {
-                $("#deleteProectModal").modal("hide");
+                $("#deleteReviewModal").modal("hide");
                 alert("Something Went Wrong!")
             }
-            
+
         })
         .catch(function (error) {
-            $("#deleteProectModal").modal("hide");
+            $("#deleteReviewModal").modal("hide");
             alert("Something Went Wrong!")
         });
 }

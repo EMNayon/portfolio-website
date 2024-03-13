@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('review',function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->string('reviewer_name');
-            $table->string('reviewer_des');
-            $table->string('reviewer_img');
+            $table->string('reviewer_name', 500);
+            $table->string('reviewer_des', 2000);
+            $table->string('reviewer_img', 500);
         });
     }
 
