@@ -22,6 +22,7 @@
 
 @yield('content')
 
+@include('Layout.footer')
 
 
 
