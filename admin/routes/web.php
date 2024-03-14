@@ -8,6 +8,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['login'])->group(function () {
@@ -50,6 +51,10 @@ Route::middleware(['login'])->group(function () {
     Route::post('/reviewDetails',[ReviewController::class,'getReviewDetails']);
     Route::post('/reviewUpdate',[ReviewController::class,'ReviewUpdate']);
     Route::post('/reviewAdd',[ReviewController::class,'ReviewAdd']);
+
+    // photo gallery
+
+    Route::get('/gallery', [PhotoController::class, 'index']);
 });
 
 
